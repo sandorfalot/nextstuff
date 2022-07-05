@@ -1,6 +1,5 @@
-function MonkeyPox({ data }) {
-    return <p>{JSON.stringify(data)}</p>
-}
+
+
 
 export async function getServerSideProps() {
     const headers = new Headers();
@@ -23,15 +22,18 @@ export default function Home({ data }) {
         <>        <div>
             <main>
                
-                {data.map(data => (
-                    <p key={data.country}>{data.country}<p?
-                           <p key={data.confirmed}>{data.confirmed}</p>
-                           <p key={data.suspected}>{data.suspected}</p>
-                            <p key={data.total}>{data.total}</p>
-                            <p key={data.deaths}>{data.deaths}</p>
-                        
-                  
-                ))}
+                {data.map(data => {
+                    return (
+                    <ul>
+                            <li key={data.country}>{data.country}</li>
+                            <li key={data.confirmed}>{data.confirmed}</li>
+                            <li key={data.suspected}>{data.suspected}</li>
+                            <li key={data.total}>{data.total}</li>
+                            <li key={data.deaths}>{data.deaths}</li>
+</ul>
+
+                    );
+                })}
                       
             </main>
             <footer>
