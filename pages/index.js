@@ -1,6 +1,3 @@
-
-
-
 export async function getServerSideProps() {
     const headers = new Headers();
     headers.append('X-RapidAPI-Key', '6fa680398fmshadf4be5c3caa2bep145905jsn9d73ba413785',
@@ -17,31 +14,26 @@ export async function getServerSideProps() {
     const data = await res.json()
     return { props: { data } }
 }
-export default function Home({ data }) {
-    return (
-        <>        <div>
-            <main>
-               
-                {data.map(data => {
-                    return (
-                    <ul key={data.id}>
-                            <li key={data.country}><strong>Country: </strong>{data.country}</li>
-                            <li key={data.confirmed}><strong>Confirmed: </strong>{data.confirmed}</li>
-                            <li key={data.suspected}><strong>Suspected: </strong>{data.suspected}</li>
-                            <li key={data.total}><strong>Total: </strong>{data.total}</li>
-                            <li key={data.deaths}><strong>Deaths: </strong>{data.deaths}</li>
-</ul>
-
-                    );
-                })}
-                      
-            </main>
-            <footer>
-                <center>Data from <a href="https://rapidapi.com/gAlexander10/api/monkeypox-global-statistics/">
-                Monkeypox Global Statistics API</a></center>
-            </footer>
-        </div>
-        </>
-    )
+function HomePage({ data }) {
+  return (
+    <table>
+      <tr><td>Country</td>
+        <td>Confirmed</td>
+        <td>Suspected</td>
+        <td>Deaths</td>
+        <td>Total</td>
+      </tr>
+      {
+        data.map((data) =>
+          <tr><td key={data.id}>{data.country}</td>
+          <td key={data.id}>{data.confirmed}</td>
+            <td key={data.id}>{data.suspected}</td>
+            <td key={data.id}>{data.deaths}</td>
+            <td key={data.id}>{data.total}</td>
+          </tr>
+        )
+      }
+    </table>
+  )
 }
-    
+export default HomePage;
