@@ -25,11 +25,11 @@ export default function Home({ data }) {
                 {data.map(data => {
                     return (
                     <ul key={data.id}>
-                            <li key={data.country}>{data.country}</li>
-                            <li key={data.confirmed}>{data.confirmed}</li>
-                            <li key={data.suspected}>{data.suspected}</li>
-                            <li key={data.total}>{data.total}</li>
-                            <li key={data.deaths}>{data.deaths}</li>
+                            <li key={data.country}><strong>Country: </strong>{data.country}</li>
+                            <li key={data.confirmed}><strong>Confirmed: </strong>{data.confirmed}</li>
+                            <li key={data.suspected}><strong>Suspected: </strong>{data.suspected}</li>
+                            <li key={data.total}><strong>Total: </strong>{data.total}</li>
+                            <li key={data.deaths}><strong>Deaths: </strong>{data.deaths}</li>
 </ul>
 
                     );
