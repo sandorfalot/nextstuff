@@ -24,7 +24,7 @@ export default function Home({ data }) {
             <main>
                
                 {data.map(data => (
-                    <p>{data.country},
+                    <p key={data.id}>{data.country},
                            {data.confirmed}
                            {data.suspected}
                             {data.total}
