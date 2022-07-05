@@ -24,11 +24,11 @@ export default function Home({ data }) {
             <main>
                
                 {data.map(data => (
-                    <p key={data.id}>{data.country}<p?
-                           <p key={data.id>{data.confirmed}</p>
-                           <p key={data.id}>{data.suspected}</p>
-                            <p key={data.id>{data.total}</p>
-                            <p key=data.id>{data.deaths}</p>
+                    <p key={data.country}>{data.country}<p?
+                           <p key={data.confirmed}>{data.confirmed}</p>
+                           <p key={data.suspected}>{data.suspected}</p>
+                            <p key={data.total}>{data.total}</p>
+                            <p key={data.deaths}>{data.deaths}</p>
                         
                   
                 ))}
