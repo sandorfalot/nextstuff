@@ -1,0 +1,8 @@
+table{
+    position: relative;
+    width: 70%;
+    left: 15%;
+}
+body, footer{
+    padding: 1%;
+}
